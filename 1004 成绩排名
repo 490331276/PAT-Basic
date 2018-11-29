@@ -1,0 +1,18 @@
+#include <stdio.h>
+struct stu {
+	char name[12],ID[12];
+	int score;
+};
+int main() {
+	int i,n,min=0,max=0;
+	scanf("%d",&n);
+	struct stu st[n];
+	for(i=0;i<n;i++) scanf("%s%s%d",st[i].name,st[i].ID,&st[i].score);
+	for(i=0;i<n;i++) {
+		if(st[i].score<st[min].score) min=i;
+		if(st[i].score>st[max].score) max=i;
+	}
+	printf("%s %s\n",st[max].name,st[max].ID);
+	printf("%s %s\n",st[min].name,st[min].ID);
+  return 0;
+}
