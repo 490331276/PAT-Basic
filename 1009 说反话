@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main() {
+	char s[40][81], c;
+	int count = 0;
+	do {
+		scanf("%s", s[count++]);
+	} while ((c = getchar()) != '\n');
+		for (int i = count - 1; i >= 0; i--) printf("%s%c", s[i],i==0 ? '\n':' ');
+  return 0;
+}
