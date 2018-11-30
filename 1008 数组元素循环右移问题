@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+	int M,N,i=0;
+	scanf("%d %d", &N, &M);
+	int Num[N];
+	for(i=0;i<N;i++) {
+		scanf("%d", &Num[(i+M)%N]); //输入向右移动M个
+	}
+	int flag=1;
+    for(i=0;i<N;i++) {
+    	printf(flag ? "%d":" %d", Num[i]);
+    	flag=0;
+    }
+	return 0;
+}
