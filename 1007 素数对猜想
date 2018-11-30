@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+int IsP(int N) { //判断是否为素数
+	int i;
+	for(i=2;i<=sqrt(N);i++) {
+		if(!(N%i)) return 0;
+	}
+	return 1;
+}
+int main() {
+	int N,k=0,cont=0;;
+	scanf("%d", &N);
+	int P[N];
+	for(int i=2;i<=N;i++) {
+		if(IsP(i)) {
+			P[k]=i;
+		  if(k>0) {
+		    if(P[k]-P[k-1]==2)
+		    cont++;
+		  }
+		  k++;
+		}
+	}
+	printf("%d",cont);
+	return 0;
+}
